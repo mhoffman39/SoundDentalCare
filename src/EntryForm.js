@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EntryForm = () => {
+const EntryForm = ( {savePatient} ) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [faveColor, setFaveColor] = useState('');
@@ -8,7 +8,8 @@ const EntryForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(faveColor)
+    savePatient(firstName, lastName, faveColor);
+    console.log('click')
   }
 
   return (
