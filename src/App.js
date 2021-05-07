@@ -5,6 +5,7 @@ import EntryForm from './EntryForm.js';
 const App = () => {
 
   const savePatient = (fName, lName, fColor) => {
+    console.log('src/app')
     axios.post('/patient', {
       firstName: fName,
       lastName: lName,

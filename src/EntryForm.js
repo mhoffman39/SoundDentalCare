@@ -9,7 +9,6 @@ const EntryForm = ( {savePatient} ) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     savePatient(firstName, lastName, faveColor);
-    console.log('click')
   }
 
   return (
