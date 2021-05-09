@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import EntryForm from './EntryForm.js';
+import PatientList from './PatientList.js';
 
 const App = () => {
+  const [patientList, setPatientList] = useState();
 
   const savePatient = (fName, lName, fColor) => {
-    console.log('src/app')
     axios.post('/patient', {
       firstName: fName,
       lastName: lName,
@@ -19,13 +20,27 @@ const App = () => {
     })
   }
 
+  const getPatientList = () => {
+    console.log('click')
+    axios.get('/patient')
+    .then(response => {
+      setPatientList(response.data);
+      console.log(response.data)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
+
   return (
     <div>
       <h1>Sound Dental Care</h1>
-      <EntryForm savePatient={savePatient}/>
+      <div>
+        <EntryForm savePatient={savePatient}/>
+        <PatientList getPatientList={getPatientList} />
+      </div>
     </div>
   )
-
 }
 
 export default App;
