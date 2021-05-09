@@ -7,3 +7,8 @@ exports.addPatient = async(req, res) => {
   await patient.addPatient(firstName, lastName, faveColor);
   res.status(200);
 }
+
+exports.getPatientList = async(req, res) => {
+  const patientList = await patient.getPatientList();
+  res.send(patientList);
+}

@@ -10,6 +10,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/patient', controller.addPatient);
 
+app.get('/patient', controller.getPatientList);
+
 app.listen(port, () => {
   console.log('Server listening on port ', port);
 });

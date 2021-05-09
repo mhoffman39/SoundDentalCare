@@ -11,3 +11,8 @@ exports.addPatient = async(fName, lName, fColor) => {
     }
   })
 };
+
+exports.getPatientList = async() => {
+  const patients = await Patient.find({});
+  return patients;
+}
