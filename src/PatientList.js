@@ -1,14 +1,16 @@
 import React from 'react';
+import Patient from './Patient.js';
 
-const PatientList = ({ getPatientList }) => {
-  console.log('Hello World')
-
+const PatientList = ({ patientList }) => {
+  let list;
+  if (patientList) {
+    list = patientList.map((patient) =>
+      <Patient key={patient._id} patient={patient} />
+    )}
 
   return (
     <div>
-      <button onClick={getPatientList}>
-        Get Patient List
-      </button>
+      {list}
     </div>
   )
 }

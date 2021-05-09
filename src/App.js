@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import EntryForm from './EntryForm.js';
+import GetPatientListButton from './GetPatientListButton.js';
 import PatientList from './PatientList.js';
 
 const App = () => {
@@ -25,7 +26,6 @@ const App = () => {
     axios.get('/patient')
     .then(response => {
       setPatientList(response.data);
-      console.log(response.data)
     })
     .catch(function(error) {
       console.log(error)
@@ -37,7 +37,8 @@ const App = () => {
       <h1>Sound Dental Care</h1>
       <div>
         <EntryForm savePatient={savePatient}/>
-        <PatientList getPatientList={getPatientList} />
+        <GetPatientListButton getPatientList={getPatientList} />
+        <PatientList  patientList={patientList}/>
       </div>
     </div>
   )
