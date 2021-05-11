@@ -1,10 +1,15 @@
 import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const Patient = ({ patient }) => {
+  const birthday = patient.bday.slice(0,10);
+  const recallDay = patient.recall.slice(0, 10);
+  const patientData = `${patient.firstName}  ${patient.lastName}   ${birthday}   ${recallDay}   ${patient.facility}   ${patient.recallInterval}   ${patient.careCode}`
+
   return (
-    <div>
-      {patient.firstName}  {patient.lastName}  {patient.bday}  {patient.recall}  {patient.facility}  {patient.recallInterval}  {patient.careCode}
-    </div>
+    <ListGroup>
+      <ListGroup.Item action variant="light">{patientData}</ListGroup.Item>
+    </ListGroup>
   )
 }
 
