@@ -13,7 +13,6 @@ import axios from 'axios';
 import EntryForm from './EntryForm.js';
 import GetPatientListButton from './GetPatientListButton.js';
 import PatientList from './PatientList.js';
-import Navigation from './Navigation.js';
 import Home from './Home.js';
 
 const App = () => {
@@ -39,7 +38,6 @@ const App = () => {
   }
 
   const getPatientList = () => {
-    console.log('click')
     axios.get('/patient')
     .then(response => {
       setPatientList(response.data);
@@ -84,19 +82,6 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-    // <div>
-    //   <Navigation savePatient={savePatient}/>
-    //   <h1 className="company">Sound Dental Care</h1>
-    //   <div className="container">
-    //     <div>
-    //       <EntryForm savePatient={savePatient}/>
-    //     </div>
-    //     <div>
-    //       <GetPatientListButton getPatientList={getPatientList} />
-    //       <PatientList  patientList={patientList}/>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
