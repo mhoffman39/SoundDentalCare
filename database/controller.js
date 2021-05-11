@@ -8,7 +8,8 @@ exports.addPatient = async(req, res) => {
   const facility = req.body.facility;
   const recallInterval = req.body.recallInterval;
   const careCode = req.body.careCode;
-  await patient.addPatient(firstName, lastName, bday, recall, facility, recallInterval, careCode);
+  const notes = req.body.notes;
+  await patient.addPatient(firstName, lastName, bday, recall, facility, recallInterval, careCode, notes);
   res.status(200);
 }
 

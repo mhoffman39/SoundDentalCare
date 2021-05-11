@@ -9,6 +9,7 @@ const patientSchema = Schema({
   facility: String,
   recallInterval: String,
   careCode: String,
+  notes: String,
 },
 {
   collection: 'Patients'
