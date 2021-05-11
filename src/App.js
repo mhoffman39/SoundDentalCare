@@ -4,11 +4,12 @@ import axios from 'axios';
 import EntryForm from './EntryForm.js';
 import GetPatientListButton from './GetPatientListButton.js';
 import PatientList from './PatientList.js';
+import NavbarComp from './NavbarComp.js';
 
 const App = () => {
   const [patientList, setPatientList] = useState();
 
-  const savePatient = (fName, lName, bday, recall, facility, recallInterval, careCode) => {
+  const savePatient = (fName, lName, bday, recall, facility, recallInterval, careCode, notes) => {
     axios.post('/patient', {
       firstName: fName,
       lastName: lName,
@@ -16,7 +17,8 @@ const App = () => {
       recall: recall,
       facility: facility,
       recallInterval: recallInterval,
-      careCode: careCode
+      careCode: careCode,
+      notes: notes
     })
     .then(function (response) {
       console.log(response);
@@ -39,6 +41,7 @@ const App = () => {
 
   return (
     <div>
+      <NavbarComp />
       <h1 className="company">Sound Dental Care</h1>
       <div className="container">
         <div>
