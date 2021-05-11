@@ -3,8 +3,12 @@ const patient = require('./models/app.js');
 exports.addPatient = async(req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
-  const faveColor = req.body.faveColor;
-  await patient.addPatient(firstName, lastName, faveColor);
+  const bday = req.body.bday;
+  const recall = req.body.recall;
+  const facility = req.body.facility;
+  const recallInterval = req.body.recallInterval;
+  const careCode = req.body.careCode;
+  await patient.addPatient(firstName, lastName, bday, recall, facility, recallInterval, careCode);
   res.status(200);
 }
 

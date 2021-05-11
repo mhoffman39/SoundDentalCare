@@ -1,0 +1,9 @@
+.company {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+

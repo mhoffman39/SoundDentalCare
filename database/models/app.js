@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Patient = require('./patient.js');
 
-exports.addPatient = async(fName, lName, fColor) => {
-  const newPatient = new Patient({firstName: fName, lastName: lName, faveColor: fColor});
+exports.addPatient = async(fName, lName, bday, recall, facility, recallInterval, careCode) => {
+  const newPatient = new Patient({firstName: fName, lastName: lName, bday: bday, recall: recall, facility: facility, recallInterval: recallInterval, careCode: careCode});
   newPatient.save(function(err, newPatient) {
     if (err) {
       return console.log(err);
