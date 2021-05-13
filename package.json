@@ -28,6 +28,7 @@
     "bootstrap": "^4.6.0",
     "mongoose": "^5.12.7",
     "nodemon": "^2.0.7",
+    "print-js": "^1.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",

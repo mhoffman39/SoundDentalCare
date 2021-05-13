@@ -11,7 +11,6 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import EntryForm from './EntryForm.js';
-import GetPatientListButton from './GetPatientListButton.js';
 import PatientList from './PatientList.js';
 import Home from './Home.js';
 
@@ -59,7 +58,7 @@ const App = () => {
                 <Nav.Link as={Link} to="/add">Add</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="/list">Patient List</Nav.Link>
+                <Nav.Link as={Link} to="/list" onClick={getPatientList}>Patient List</Nav.Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
@@ -72,7 +71,6 @@ const App = () => {
           </Route>
           <Route path="/list">
             <div>
-              <GetPatientListButton getPatientList={getPatientList} />
               <PatientList  patientList={patientList}/>
             </div>
           </Route>

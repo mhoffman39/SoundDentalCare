@@ -14,7 +14,7 @@ const EntryForm = ( {savePatient} ) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    savePatient(firstName, lastName, bday, recall, facility, recallInterval, careCode);
+    savePatient(firstName, lastName, bday, recall, facility, recallInterval, careCode, notes);
     setFirstName('');
     setLastName('');
     setRecall('');
